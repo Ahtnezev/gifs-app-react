@@ -23,4 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
+__snapshots__
 .env
