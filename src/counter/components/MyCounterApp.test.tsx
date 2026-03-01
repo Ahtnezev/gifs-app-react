@@ -17,7 +17,7 @@ describe('MyCounterApp', () => {
     // screen.debug();
   });
 
-  test('should increment the counter', () => {
+  test('2t.should increment the counter', () => {
     render(<MyCounterApp/>);
 
     const labelH1 = screen.getByRole('heading', {level:1});
@@ -28,7 +28,7 @@ describe('MyCounterApp', () => {
     expect(labelH1.innerHTML).toContain('counter: 11');
   });
 
-  test('should decrement the counter', () => {
+  test('3t.should decrement the counter', () => {
     render(<MyCounterApp/>);
 
     const labelH1 = screen.getByRole('heading', {level:1});
