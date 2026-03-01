@@ -1,6 +1,6 @@
 import { useCounter } from "../hooks/useCounter"
 
-export const MyCounbterApp = () => {
+export const MyCounterApp = () => {
 
   const {counter, handleAdd, handleReset, handleSubstract} = useCounter();
 
