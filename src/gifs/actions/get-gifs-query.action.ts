@@ -13,6 +13,8 @@ export const getGifsByQuery = async(query: string): Promise<Gif[]> => {
         }
     });
 
+    // console.log(response); //test get-gifs-query.action.test.ts
+
     // console.log(response.data);
     return response.data.data.map( (gif) => ({
         id: gif.id,
