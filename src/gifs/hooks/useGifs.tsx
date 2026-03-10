@@ -39,7 +39,7 @@ export const useGifs = () => {
 
         gifsCache.current[query] = gifs;
         // se vuelve a renderizar y se pierde la info previa, sacamos del component (opcional), usaremos useRef
-        console.log(gifsCache);
+        // console.log(gifsCache);
     }
 
 
