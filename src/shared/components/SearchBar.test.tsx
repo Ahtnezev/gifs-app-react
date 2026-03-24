@@ -23,6 +23,48 @@ describe('Searchbar', () => {
             expect(onQuery).toHaveBeenCalled();
             expect(onQuery).toHaveBeenCalledWith('anyaforger');
         });
+    });
+
+    test('should call only once wuth the last value (debounce)', async () => {
+        const onQuery = vi.fn();
+        render(<SearchBar onQuery={onQuery} />);
+
+        const input = screen.getByRole('textbox');
+        fireEvent.change(input, { target: {value:'t'} });
+        fireEvent.change(input, { target: {value:'te'} });
+        fireEvent.change(input, { target: {value:'tes'} });
+        fireEvent.change(input, { target: {value:'test'} });
+
+        await waitFor(() => {
+            expect(onQuery).toHaveBeenCalledWith('test');
+            expect(onQuery).toHaveBeenCalledTimes(1);
+        });
+    });
+
+    test('should call onQuery when button clicked with the input value', () => {
+        const onQuery = vi.fn();
+        render(<SearchBar onQuery={onQuery} />);
+
+        const input = screen.getByRole('textbox');
+        fireEvent.change(input, { target: {value:'wasaa'} });
+
+        const button = screen.getByRole('button');
+        fireEvent.click(button);
+
+        expect(onQuery).toHaveBeenCalledTimes(1);
+        expect(onQuery).toHaveBeenCalledWith('wasaa');
+    });
+
+    test('should the input has the correct placeholder prop', () => {
+        const value = 'Buscar gif';
+        render(<SearchBar onQuery={() => {}} placeholder={value} />);
+
+        screen.debug();
+
+        expect(screen.getByPlaceholderText(value)).toBeDefined();
+
+
 
     });
+
 });
