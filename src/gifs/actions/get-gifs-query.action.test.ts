@@ -1,4 +1,4 @@
-import { describe, expect, test, vi } from "vitest";
+import { describe, expect, test } from "vitest";
 import { getGifsByQuery } from "./get-gifs-query.action";
 
 import AxiosMockAdapter from 'axios-mock-adapter';

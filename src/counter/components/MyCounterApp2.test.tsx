@@ -27,6 +27,8 @@ describe("MyCounterApp #2", ()=>{
       `counter: 40`
     );
 
+   //  expect(2).toBe(1); check package file in npm run build ><
+
     expect(screen.getByRole('button', {name: '+1'}).innerHTML).toBeDefined();
     expect(screen.getByRole('button', {name: '-1'}).innerHTML).toBeDefined();
     expect(screen.getByRole('button', {name: 'Reset'}).innerHTML).toBeDefined();

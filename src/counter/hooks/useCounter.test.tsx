@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from "vitest";
+import { describe, expect, test } from "vitest";
 import { useCounter } from "./useCounter";
 import { act, renderHook } from "@testing-library/react";
 

@@ -6,7 +6,7 @@ import { useGifs } from "./gifs/hooks/useGifs"
 
 export const GifsApp = () => {
 
-  const {gifs, handleSearch, handleTermClick, previousTerms} = useGifs();
+  const {gifs, handleSearch, handleTermClicked, previousTerms} = useGifs();
 
   return (
     <>
@@ -26,7 +26,7 @@ export const GifsApp = () => {
         <PreviousSearches
           searches={previousTerms}
           // onLabelClicked={handleTermClick}
-          onLabelClicked={(term:string)=> handleTermClick(term)}
+          onLabelClicked={(term:string)=> handleTermClicked(term)}
         />
 
         {/* gifs */}
